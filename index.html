@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101923" />
+    <meta
+      name="description"
+      content="Northstar is a calm workspace for tracking your money and screening location-specific environmental risk with public satellite and weather data."
+    />
+    <title>Northstar — Personal finance and environmental intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#app-main">Skip to main content</a>
+
+    <section class="auth-screen is-hidden" id="auth-screen" aria-labelledby="auth-title">
+      <div class="auth-ambient auth-ambient-one" aria-hidden="true"></div>
+      <div class="auth-ambient auth-ambient-two" aria-hidden="true"></div>
+      <div class="auth-layout">
+        <div class="auth-story">
+          <a class="brand brand-light" href="#" aria-label="Northstar home">
+            <span class="brand-symbol">✦</span>
+            <span><strong>northstar</strong><small>personal finance</small></span>
+          </a>
+          <div class="auth-story-copy">
+            <p class="eyebrow eyebrow-acid"><span></span> A clearer view of your money</p>
+            <h1>Make every dollar<br /><em>point somewhere.</em></h1>
+            <p>Northstar brings your spending, plans and progress into one calm, intelligent space.</p>
+          </div>
+          <div class="auth-story-proof"><span class="proof-avatars"><i>AR</i><i>JM</i><i>SK</i></span><span>Join 12,000+ people building better money habits.</span></div>
+        </div>
+        <div class="auth-card">
+          <div class="auth-card-heading">
+            <p class="auth-kicker" id="auth-kicker">Welcome back</p>
+            <h2 id="auth-title">Sign in to Northstar</h2>
+            <p id="auth-description">Your financial picture is waiting for you.</p>
+          </div>
+          <form id="auth-form" novalidate>
+            <div class="field-group is-hidden" id="name-field">
+              <label for="auth-name">Your name</label>
+              <input id="auth-name" name="name" type="text" autocomplete="name" placeholder="Alex Rivera" />
+            </div>
+            <div class="field-group">
+              <label for="auth-email">Email address</label>
+              <input id="auth-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+            </div>
+            <div class="field-group">
+              <div class="field-label-row"><label for="auth-password">Password</label><button type="button" class="text-button" data-auth-action="forgot">Forgot?</button></div>
+              <input id="auth-password" name="password" type="password" autocomplete="current-password" placeholder="8+ characters" minlength="8" required />
+            </div>
+            <p class="form-message" id="auth-message" role="alert"></p>
+            <button class="button button-primary button-full" type="submit"><span id="auth-submit-label">Sign in</span><b>↗</b></button>
+          </form>
+          <div class="auth-divider"><span>or</span></div>
+          <button class="button button-quiet button-full" type="button" data-auth-action="demo">Continue with demo workspace <span>↗</span></button>
+          <p class="auth-switch"><span id="auth-switch-copy">New to Northstar?</span> <button type="button" class="text-button" data-auth-action="toggle">Create an account</button></p>
+          <p class="auth-privacy">Local demo mode stores your workspace in this browser only.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="app-shell" id="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+        <div class="sidebar-top">
+          <a class="brand" href="#dashboard" aria-label="Northstar dashboard">
+            <span class="brand-symbol">✦</span>
+            <span><strong>northstar</strong><small>personal finance</small></span>
+          </a>
+          <button class="sidebar-close" type="button" data-action="close-sidebar" aria-label="Close navigation">×</button>
+        </div>
+        <div class="workspace-switcher">
+          <span class="workspace-icon">AR</span>
+          <span class="workspace-copy"><strong id="sidebar-name">Alex Rivera</strong><small>Personal workspace</small></span>
+          <span class="workspace-chevron">⌄</span>
+        </div>
+        <nav class="sidebar-nav" aria-label="Finance sections">
+          <p class="nav-label">Workspace</p>
+          <button class="nav-item is-active" type="button" data-route="dashboard" aria-current="page"><span class="nav-icon">◈</span><span>Overview</span><kbd>1</kbd></button>
+          <button class="nav-item" type="button" data-route="transactions"><span class="nav-icon">↕</span><span>Transactions</span><kbd>2</kbd></button>
+          <button class="nav-item" type="button" data-route="budgets"><span class="nav-icon">▥</span><span>Budgets</span><kbd>3</kbd></button>
+          <button class="nav-item" type="button" data-route="subscriptions"><span class="nav-icon">◌</span><span>Subscriptions</span><kbd>4</kbd></button>
+          <button class="nav-item" type="button" data-route="goals"><span class="nav-icon">◎</span><span>Savings goals</span><kbd>5</kbd></button>
+           <p class="nav-label nav-label-spaced">Explore</p>
+           <button class="nav-item" type="button" data-route="insights"><span class="nav-icon">✦</span><span>Smart insights</span><span class="nav-badge">3</span></button>
+           <button class="nav-item" type="button" data-route="risk"><span class="nav-icon">⌁</span><span>Environmental risk</span><span class="nav-badge risk-nav-badge">NEW</span></button>
+         </nav>
+        <div class="sidebar-bottom">
+          <div class="sidebar-upgrade"><span class="upgrade-icon">✦</span><div><strong>Northstar Plus</strong><small>Unlock deeper patterns</small></div><span>↗</span></div>
+          <button class="nav-item nav-item-muted" type="button" data-action="open-settings"><span class="nav-icon">⚙</span><span>Settings</span></button>
+          <button class="nav-item nav-item-muted" type="button" data-action="sign-out"><span class="nav-icon">↪</span><span>Sign out</span></button>
+        </div>
+      </aside>
+
+      <div class="sidebar-scrim" data-action="close-sidebar"></div>
+
+      <section class="main-column">
+        <header class="topbar">
+          <div class="topbar-leading">
+            <button class="mobile-menu" type="button" data-action="open-sidebar" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false"><span></span><span></span></button>
+            <div class="page-context"><span class="page-context-kicker" id="page-kicker">Tuesday, October 19, 2026</span><h1 id="page-title">Good morning, Alex <span>✦</span></h1></div>
+          </div>
+          <div class="topbar-actions">
+            <button class="icon-button search-trigger" type="button" data-action="open-search" aria-label="Search transactions"><span>⌕</span><kbd>⌘ K</kbd></button>
+            <button class="icon-button notification-button" type="button" data-action="show-notifications" aria-label="View notifications"><span>♧</span><i></i></button>
+            <button class="profile-trigger" type="button" data-action="toggle-profile" aria-expanded="false"><span class="avatar" id="top-avatar">AR</span><span class="profile-trigger-copy"><strong id="top-name">Alex Rivera</strong><small>Personal</small></span><span class="profile-caret">⌄</span></button>
+            <div class="profile-menu" id="profile-menu" hidden>
+              <div class="profile-menu-heading"><span class="avatar avatar-large" id="menu-avatar">AR</span><span><strong id="menu-name">Alex Rivera</strong><small id="menu-email">alex@northstar.app</small></span></div>
+              <button type="button" data-action="open-settings">⚙ <span>Settings</span></button>
+              <button type="button" data-action="export-data">↓ <span>Export workspace</span></button>
+              <button type="button" class="profile-menu-danger" data-action="sign-out">↪ <span>Sign out</span></button>
+            </div>
+          </div>
+        </header>
+
+        <main id="app-main" tabindex="-1"></main>
+      </section>
+    </div>
+
+    <div class="modal-layer" id="modal-layer" aria-live="polite"></div>
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
